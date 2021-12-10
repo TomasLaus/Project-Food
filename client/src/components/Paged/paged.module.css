@@ -1,0 +1,18 @@
+.pagination_nav {
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.pagination_button{
+    margin-left: 9px;
+    border-radius: 5px;
+    padding: 8px;
+    border: transparent;
+    transition: all 0.5s;
+    width:30px
+}
+.pagination_button:hover{
+    background-color: rgba(233, 255, 110, 0.644)
+}

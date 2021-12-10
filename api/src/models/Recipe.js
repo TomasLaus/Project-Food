@@ -16,8 +16,8 @@ module.exports = (sequelize) => {
   sequelize.define('recipe', {
     id: {
       type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
+      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
     },
     
@@ -47,7 +47,11 @@ module.exports = (sequelize) => {
     steps: {
       type: DataTypes.TEXT,
     },
-
+    createdInDB: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true
+    }
 
   }, {timestamps: false});
 

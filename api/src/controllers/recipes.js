@@ -12,8 +12,9 @@ const getApiInfo = async () => {
 
     const apiInfo = infoApi.data.results.map(obj => {
         return {
+            vegetarian: obj.vegetarian,
             id: obj.id,
-            title: obj.title,
+            name: obj.title,
             summary: obj.summary,
             score: obj.spoonacularScore,
             healthyScore: obj.healthScore,
@@ -57,18 +58,19 @@ router.get('/', async (req, res) => {
             if(recipeTitles.length > 0) res.status(200).json(recipeTitles);
             else res.status(404).send('The indicated recipe does not exist');
     } else {
-        res.status(404).json(totalRecipes);
+        res.status(200).json(totalRecipes);
     }
 });
 
 
 router.get('/:id', async (req, res) => {
-    const {id} = req.params;
-    const totalRecipes = await getAllInfo();
+    const { id } = req.params;
+    const recipesTotal = await getAllInfo();
     if (id) {
-        const recipeId = await totalRecipes.filter(recipes => recipes.id === parseInt(id));
-            if (recipeId.length > 0) res.status(200).json(recipeId);
-            else res.status(404).send('The indicated recipe does not exist');
+      let recipeId = await recipesTotal.filter((r) => r.id == id);
+      recipeId.length
+        ? res.status(200).json(recipeId)
+        : res.status(404).send("Recipe not found");
     }
 });
 

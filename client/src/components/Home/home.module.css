@@ -1,0 +1,146 @@
+body {
+    background-image: url("https://www.thehealthmuseum.org/public/OH3C840.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+
+
+.homelabel {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+}
+
+.filtersHome {
+    background-color: rgba(95, 95, 95, 0.733);
+    margin-top: 1%;
+    margin-bottom: 5%;
+    padding: 5px;
+}
+
+.btnrecipes {
+    position: absolute;
+    left: 70px;
+    top: 23px;
+    border: 1px solid lightblue;
+    padding: 10px;
+    font-family: cursive;
+    cursor: pointer;
+    animation: bounce 0.8s alternate ease infinite;
+    box-shadow: 5px 5px 14px 0 #555;
+    z-index: 16;
+}
+
+.btncreate {
+    position: absolute;
+    right: 70px;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(5px);
+        background: linear-gradient(50deg, #fff0c0, #ffa500);
+    }
+
+    100% {
+        transform: translateY(-3px);
+        background: linear-gradient(0deg, #fff0c0, #ffa500);
+    }
+}
+
+.home_cardflexcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.pagination {
+    padding: 150px;
+}
+
+/*-------------------*/
+
+
+.homeselect,
+.reloadRecipes {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #5c6664;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+    background: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    border-bottom: 1px solid #111;
+    margin-right: 4px;
+    margin-left: 4px;
+    outline: none;
+    transition: .5s;
+}
+.homeselect:hover {
+    cursor: pointer;
+    background-color: #2b2e2e;
+}
+.reloadRecipes:hover {
+    cursor: pointer;
+    padding-left: 15px;
+    background-color: #2b2e2e;
+}
+
+.homeselect::-ms-expand {
+    display: none;
+    
+}
+
+.homeselect,
+.reloadRecipes {
+    position: relative;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #5c6664;
+    overflow: hidden;
+    border-radius: .25em;
+    
+}
+
+.homeselect::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #2b2e2e;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+    
+}
+
+.homeselect:hover::after {
+    color: #23b499;
+}
+
+.reloadBtn {
+    border-radius: 15px;
+    margin-right: 5px;
+    background: transparent;
+    border: 0 solid transparent;
+}
+
+.reloadBtn:hover {
+    cursor: pointer;
+}

@@ -1,20 +1,18 @@
 const router = require("express").Router();
-const { Diet } = require('../db');
 require('dotenv').config();
+const { preload } = require("./dietsPreload");
 
 
 
 
 
-const getDiets = async () => {
-  const allDiets = await Diet.findAll();
-  return allDiets;
-};
-
-
-router.get("/", async (req, res) => {
-  const getAllDiets = await getDiets();
-  res.send(getAllDiets);
+router.get("/", async (req, res, next) => {
+  try {
+    const types = await preload();
+    res.status(200).send(types);
+  } catch (error) {
+    error.next;
+  }
 });
 
 module.exports = router;

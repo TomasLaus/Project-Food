@@ -1,0 +1,62 @@
+.detail_link, .detail_link_a {
+    color: #111;
+    position: absolute;
+    left: 50px;
+    top: 2px;
+    font-size:29px;
+    text-decoration: none;
+    transition: .5s;
+}
+.detail_link:hover {
+    font-size:35px;
+}
+
+.detail_container {
+    background: rgba(245, 245, 245, 0.671);
+    position:static;
+    top: -20px;
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    transform: scale(84%);
+    border-radius: 15px;
+}
+.recipesDetail {
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #111;
+    display: block;
+}
+.detail_title {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.detail_score, .detail_health, .detail_diets {
+    font-size: 14px;
+    display: inline;
+}
+
+.detail_resume, .detail_sbs {
+    width: 900px;
+    margin: auto;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 22px auto;
+    color: #494949;
+}
+
+.detail_img {
+    height: 330px;
+    width: 420px;
+    max-height: 330px;
+    max-width: 420px;
+    box-shadow: 1px 1px 10px 0 #333;
+    border-radius: 5px;
+    margin: 1% auto;
+    transition: .5s;
+}
+.detail_img:hover {
+    box-shadow: 5px 5px 6px 0 #333;
+    cursor: pointer;
+}

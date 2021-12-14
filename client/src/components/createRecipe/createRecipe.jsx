@@ -105,11 +105,11 @@ export default function RecipeCreate() {
     <div className="principal-on">
       <div className="home">
         <Link to="/home">
-          <button className="btn"> Home </button>
+          <button className="post-gohome"> Home </button>
         </Link>
       </div>
 
-      <h1> ¡ Create new Recipe !</h1>
+      <h1>Create your recipe</h1>
 
       <div className="form-register">
         <form
@@ -121,90 +121,108 @@ export default function RecipeCreate() {
             handleSubmit(e);
           }}
         >
-          <label for="titleID">Title: </label>
+          <label className="label_names" for="titleID">Title: </label>
           <input
             name="name"
             type="text"
             id="titleID"
             placeholder="New recipe"
+            className="input_text"
             value={input.name}
             required
           />
-          {errors.name && <p> {errors.name}</p>}
+          {errors.name && <p className="error"> {errors.name}</p>}
 
-          <label for="summaryID">Summary: </label>
+          <label className="label_names" for="summaryID">Summary: </label>
           <textarea
             name="summary"
             type="text"
             id="summaryID"
             placeholder="Summary"
+            className="input_text"
             value={input.summary}
             required
           />
-          {errors.summary && <p> {errors.summary}</p>}
-          <label className="summary-steps">Steps: </label>
+          {errors.summary && <p className="error"> {errors.summary}</p>}
+          <label className="label_names">Steps: </label>
           <textarea
             name="steps"
             type="text"
-            placeholder="Steps"
+            id="stepsID"
+            placeholder="Your step by step"
+            className="input_text"
             value={input.steps}
+            required
           />
-          {errors.steps && <p> {errors.steps}</p>}
+          {errors.steps && <p className="error"> {errors.steps}</p>}
 
-          <label>Score: </label>
+          <label className="label_names">Score: </label>
           <input
             name="score"
             type="number"
             placeholder="Score"
+            className="input_text"
             value={input.score}
+            required
           />
-          {errors.score && <p> {errors.score}</p>}
+          {errors.score && <p className="error"> {errors.score}</p>}
 
-          <label>Health: </label>
+          <label className="label_names">Health: </label>
           <input
             name="healthyScore"
             type="number"
             placeholder="healthy Score"
+            className="input_text"
             value={input.healthyScore}
+            required
           />
-          {errors.healthyScore && <p> {errors.healthyScore}</p>}
+          {errors.healthyScore && <p className="error"> {errors.healthyScore}</p>}
           <div>
-            <label for="img">Image:</label>
+            <label className="label_names" for="img">Image URL:</label>
             <input
-              className="inputCreate"
+              className="input_text"
               type="text"
               id="img"
               placeholder="Example: https://..."
               value={input.image}
               name="image"
               onChange={(e) => handleChange(e)}
+              required
             />
-            {errors.image && <p>{errors.image}</p>}
+            {errors.image && <p className="error">{errors.image}</p>}
           </div>
-          <button type="submit" className="btn">
-            Create Recipe
+          <button type="submit" className="post-btncreate">
+                Create Recipe
           </button>
-        </form>
+          </form>
+        </div>
+          
+          
+        <div className="diets">
+          <form
+            onChange={(e) => {
+              handleCheckBoxs(e);
+            }}
+            >
+            <h3>Select diets </h3>
+            {diets &&
+              diets.map((diet) => {
+                return (
+                  <div className="diets_divmap">
+                    <label className="label_diets"> {diet.name}</label>
+                    <input className="input_check" type="checkbox" name={diet.name}/>
+                  </div>
+                );
+                
+              })}
+          </form>
       </div>
 
-      <div className="diets">
-        <form
-          onChange={(e) => {
-            handleCheckBoxs(e);
-          }}
-        >
-          <h3>Select diets </h3>
-          {diets &&
-            diets.map((diet) => {
-              return (
-                <div>
-                  <label> {diet.name}</label>
-                  <input type="checkbox" name={diet.name}/>
-                </div>
-              );
-            })}
-        </form>
-      </div>
+
+
+
     </div>
+
+
   );
 }

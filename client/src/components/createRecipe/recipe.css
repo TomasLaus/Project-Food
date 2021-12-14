@@ -2,13 +2,59 @@
 .principal-on {
   background-repeat: no-repeat;
   background-position-x: right;
-  background-color: aliceblue;
+  background-color: rgba(240, 248, 255, 0.548);
+  height: 100%;
+  max-width: 80vw;
+  margin: 2% auto;
+  border-radius: 15px;
+  padding: 20px 0;
 }
 
 .home {
   display: flex;
+  flex-direction: column;
   margin: 30px;
   margin-bottom: 30px;
+
+}
+
+.post-gohome, .post-btncreate {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #757777 !important;
+  background-image: none;
+  flex: 1;
+  padding: .7em;
+  color: rgb(238, 238, 238);
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  background: transparent;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: none;
+  border-bottom: 1px solid rgb(255, 249, 249);
+  margin-right: 4px;
+  margin-left: 4px;
+  max-width: 200px;
+  outline: none;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.post-gohome:hover, .post-btncreate:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(92, 91, 91) !important;
+  cursor: pointer;
+}
+
+.post-btncreate{
+  display:block;
+  margin: 3% auto;
 }
 
 h1 {
@@ -18,37 +64,91 @@ h1 {
 
 .form-register {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: left;
 }
 
-label {
-  margin: 5px;
+.label_names {
+  margin-top: 15px;
   font-family: "Zen Antique", serif;
   color: black;
   border-radius: 20px;
+  display: flex;  
+  align-items:center;
+  flex-direction: column;
 }
 
-input {
-  border-radius: 10px;
-  margin-right: 5px;
+.label_diets {
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.input_text {
+  border-radius: 5px;
+  padding: 7px;
+  background: #ffffffd3;
+  transition: all .2s;
+  border: none;
+  display: inline-block;
+  border-radius: 15px;
+  box-shadow: 10px 10px 4px rgba(17, 17, 17, 0.445);
+}
+
+#summaryID {
+  max-width: 80%;
+}
+
+#stepsID {
+  max-width: 80%;
+}
+
+.input_check {
+  margin: 10px;
+  cursor: pointer;
+  background-color: rgb(255, 0, 0);
+}
+.input_check:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 textarea {
-  max-width: 400px;
-  border-radius: 5px;
-  min-width: 200px;
-  border: 2px solid black;
+  border-radius: 10px;
+  background: #ffffffd3;
+  transition: all .2s;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 16px 16px 4px #111;
 }
 
 .diets {
   display: flex;
-  justify-content: center;
-  padding: 25px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-p {
-  display: inline-block;
+.diets_divmap {
+  padding: 7px;
+  width: 300px;
+  height: 40px;
+  margin: 28px;
+  background: #ffffffd3;
+  transition: all .2s;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 8px 8px 4px rgba(17, 17, 17, 0.466);
+  display: inline-block
+}
+
+.error {
+  display: block;
   color: red;
   margin-right: 5px;
 }

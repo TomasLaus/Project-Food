@@ -12,7 +12,7 @@ import {GET_RECIPES,
 export const getAllRecipes =()=> {
 
     return async function(dispatch) {
-        const response = await axios.get("http://localhost:3001/recipes");
+        const response = await axios.get("/recipes");
 
         return dispatch({
             type: GET_RECIPES,
@@ -24,7 +24,7 @@ export const getAllRecipes =()=> {
 export function getRecipesByName(name) {
     return async function(dispatch) {
         try {
-            const recipes = await axios.get(`http://localhost:3001/recipes?name=${name}`);
+            const recipes = await axios.get(`/recipes?name=${name}`);
             return dispatch({type: GET_RECIPES_BY_NAME, payload: recipes.data});
         } catch (error) {
             console.error(error);
@@ -35,7 +35,7 @@ export function getRecipesByName(name) {
 export const getDietTypes =()=> {
 
     return async function (dispatch) {
-        const json = await axios("http://localhost:3001/types");
+        const json = await axios("/types");
         return dispatch({
             type: GET_DIET_TYPES,
             payload: json.data
@@ -48,7 +48,7 @@ export const getRecipeDetail = payload => {
 
     return async function (dispatch) {
         try {
-            const response = await axios(`http://localhost:3001/recipes/${payload}`);
+            const response = await axios(`/recipes/${payload}`);
             return dispatch({
                 type: GET_RECIPE_DETAIL,
                 payload: response.data
@@ -62,7 +62,7 @@ export const getRecipeDetail = payload => {
 
 export async function postNewRecipe(payload) {
     try {
-      await axios.post("http://localhost:3001/recipe", payload);
+      await axios.post("/recipe", payload);
       return true;
     } catch ({ message: error }) {
       return false;

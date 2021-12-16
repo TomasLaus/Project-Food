@@ -1,6 +1,7 @@
 
 
 <h1 align="center"> Tasty - Food Project </h1>
+<h6 align="center"><a href="https://project-food-tomaslaus.vercel.app">Demo</a></h6>
 
 <p align="right">
   <img height="500" width="100%" src="http://salsaritas.johngroupinteractive.com/wp-content/uploads/2017/06/enchilada-bg.jpg" />
@@ -22,7 +23,7 @@ This project uses the [spoonacular](https://spoonacular.com/food-api) API, and f
 <hr>
 
 #### Required technologies:
-- [] React
+- [ ] React
 - [ ] Redux
 - [ ] Express
 - [ ] Sequelize - Postgres
